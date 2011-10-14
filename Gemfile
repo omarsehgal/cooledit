@@ -4,7 +4,8 @@ gem 'rails', '3.1.1'
 gem 'jeditable-rails'
 
 group :production do
-  gem 'therubyracer', '~> 0.9.3.beta1'
+  #gem 'therubyracer', '~> 0.9.3.beta1'
+  gem 'thin'
   gem 'pg'
 end
 
