@@ -1,1 +1,14 @@
-simple rails app integrating a javascript inline editor
+A mashup of jeditable-rails and jquery.jeditable.js to demo mouseover, mouseleave triggers on an inline editable field
+
+In the sample rails app, the User model has two accessible attributes- 'name' and 'hobbies'
+
+The root path takes you to /users, you can click on a sample user or create a new one.
+
+The 'show' page has inline editing enabled on the hobbies data. Mouseover the text, make changes, mouseout to save your changes via ajax.
+
+See the users_controller.rb for possible optimizations on the ajax response
+
+In the demo app/views/users/show.html.erb, you'll see something like this that enables the inline edit for a textarea and causes the mouseover event to trigger a js function to
+change another div's background to blue. The mouseleave event triggers a js function to change the same div's background back to gray.
+
+<%= editable_field @user, :hobbies, {'type' => 'textarea', 'rows' => 10, 'cols' => 40, 'mouseover_event'=>'makeblue($("#edit_mode"));','mouseleave_event'=> 'makegray($("#edit_mode"));'} %>

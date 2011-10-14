@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple app to test inline editing</title>    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="public/javascripts/jquery.jeditable.js" type="text/javascript"></script>
+    <script type="text/javascript" charset="utf-8">        
+$(function() {
+  $(".cooledit").editable({          
+      event     : "mouseover",
+      onblur  : "submit",            
+      style  : "inherit"
+  });
+});
+
+  function makegray(elem){
+    $(elem).removeClass("blue");
+    $(elem).addClass("gray");
+  }
+
+  function makeblue(elem){
+    $(elem).removeClass("gray");
+    $(elem).addClass("blue");
+  }
+
+</script>
+
+<style type="text/css">
+#sidebar {
+  width: 0px;
+}
+
+#content {
+  width: 770px;
+}
+
+.editable input[type=submit] {
+  color: #F00;
+  font-weight: bold;
+}
+.editable input[type=button] {
+  color: #0F0;
+  font-weight: bold;
+}
+.gray {
+    background-color: #C0C0C0;    
+}
+
+.blue {
+    background-color: #0000FF;
+}
+
+</style>
+  </head>
+
+  <body>
+    <div id="wrap">       
+      <p>
+        <b class="cooledit" data-post-path="http://www.appelsiini.net/projects/jeditable/php/echo.php" data-mouseover-event='makeblue($("#button"));' data-mouseleave-event='makegray($("#button"));'>mouseover me</b>
+      </p>
+    </div>
+    <div id="button" class="gray">
+      <span>Edit</span>
+    </div>
+  </body>
+</html>

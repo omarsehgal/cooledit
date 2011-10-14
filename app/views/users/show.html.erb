@@ -1,0 +1,24 @@
+<% title "#{@user.name}'s Profile" %>
+
+<div id="edit_mode" class="gray">
+  <span>When you are editing the hobbies, the background here will change to blue. When done, it goes back to gray</span>
+</div>
+
+<p>
+  The hobby data below can be edited inline. Mouseover the text, edit, mouseout when done to save your changes
+</p>
+
+<p>
+  <strong>Name:</strong><br/>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>Hobbies:</strong><br/>
+  <%= editable_field @user, :hobbies, {'type' => 'textarea', 'rows' => 10, 'cols' => 40, 'mouseover_event'=>'makeblue($("#edit_mode"));','mouseleave_event'=> 'makegray($("#edit_mode"));'} %>
+</p>
+
+<p>
+  <%#= link_to "Edit", edit_user_path(@user) %>
+  <%#= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete %>
+  <%#= link_to "View All", users_path %>
+</p>

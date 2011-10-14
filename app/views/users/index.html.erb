@@ -1,0 +1,13 @@
+<% title "All Users" %>
+
+<table>
+  <tr>
+  </tr>
+  <% for user in @users %>
+    <tr>
+      <td><%= link_to user.name, user %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New User", new_user_path %></p>
