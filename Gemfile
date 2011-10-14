@@ -4,8 +4,10 @@ gem 'rails', '3.1.1'
 gem 'jeditable-rails'
 
 group :production do
+  gem 'therubyracer', '~> 0.9.3.beta1'
   gem 'pg'
 end
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
