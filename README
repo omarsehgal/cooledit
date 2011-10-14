@@ -1,5 +1,7 @@
 A mashup of jeditable-rails and jquery.jeditable.js to demo mouseover, mouseleave triggers on an inline editable field
 
+A live demo is available at http://cooledit.heroku.com
+
 In the sample rails app, the User model has two accessible attributes- 'name' and 'hobbies'
 
 The root path takes you to /users, you can click on a sample user or create a new one.
